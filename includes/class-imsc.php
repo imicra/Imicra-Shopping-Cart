@@ -11,7 +11,7 @@
  * @since      1.0.0
  * @package    Imsc
  * @subpackage Imsc/includes
- * @author     Imicra <imicra@mail.ru>
+ * @author     Imicra
  */
 
 class Imsc {
@@ -65,6 +65,7 @@ class Imsc {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+        $this->register_post_types();
 
 	}
 
@@ -98,6 +99,17 @@ class Imsc {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-imsc-i18n.php';
 
+        /**
+         * Post Types
+         * Registers post types and taxonomies.
+         */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-post-types.php';
+
+        /**
+         * Template Loader.
+         */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-template-loader.php';
+
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
@@ -129,6 +141,15 @@ class Imsc {
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
 	}
+
+    /**
+	 * Register core post types.
+	 */
+    private function register_post_types() {
+        $plugin_cpt = new Imsc_Post_Types( $this->get_plugin_name(), $this->get_version() );
+
+		$this->loader->add_action( 'init', $plugin_cpt, 'register_post_types' );
+    }
 
 	/**
 	 * Register all of the hooks related to the admin area functionality

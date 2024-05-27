@@ -24,6 +24,9 @@ if ( ! defined( 'WPINC' ) ) {
 // Currently plugin version.
 define( 'IMSC_VERSION', '1.0.0' );
 
+// The plugin path.
+define( 'IMSC_ABSPATH', plugin_dir_path( __FILE__ ) );
+
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-imsc-activator.php

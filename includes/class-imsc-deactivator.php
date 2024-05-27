@@ -18,7 +18,7 @@
  * @since      1.0.0
  * @package    Imsc
  * @subpackage Imsc/includes
- * @author     Imicra <imicra@mail.ru>
+ * @author     Imicra
  */
 class Imsc_Deactivator {
 
@@ -30,7 +30,7 @@ class Imsc_Deactivator {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
-
+        flush_rewrite_rules();
 	}
 
 }

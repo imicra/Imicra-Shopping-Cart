@@ -7,7 +7,7 @@
  *
  * @package    Imsc
  * @subpackage Imsc/admin
- * @author     Imicra <imicra@mail.ru>
+ * @author     Imicra
  */
 
 class Imsc_Admin {
@@ -41,6 +41,8 @@ class Imsc_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+
+		// add_action( 'current_screen', array( $this, 'conditional_includes' ) );
 
 	}
 
@@ -88,6 +90,21 @@ class Imsc_Admin {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/imsc-admin.js', array( 'jquery' ), $this->version, false );
 
+	}
+
+    /**
+	 * Include admin files conditionally.
+	 */
+	private function conditional_includes() {
+		$screen = get_current_screen();
+
+		if ( ! $screen ) {
+			return;
+		}
+
+		if ( $screen->id === 'options-permalink' ) {
+			plugin_basename( __FILE__ )  . '/class-admin-permalink-settings.php';
+		}
 	}
 
 }

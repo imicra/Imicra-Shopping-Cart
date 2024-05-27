@@ -8,7 +8,7 @@
  * @since      1.0.0
  * @package    Imsc
  * @subpackage Imsc/includes
- * @author     Imicra <imicra@mail.ru>
+ * @author     Imicra
  */
 
 class Imsc_i18n {

@@ -8,7 +8,7 @@
  *
  * @package    Imsc
  * @subpackage Imsc/includes
- * @author     Imicra <imicra@mail.ru>
+ * @author     Imicra
  */
 
 class Imsc_Loader {

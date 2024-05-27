@@ -7,7 +7,7 @@
  *
  * @package    Imsc
  * @subpackage Imsc/public
- * @author     Imicra <imicra@mail.ru>
+ * @author     Imicra
  */
 
 class Imsc_Public {
