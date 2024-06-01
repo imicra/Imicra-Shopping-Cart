@@ -7,6 +7,8 @@
  * @author     Imicra
  */
 
+use imsc\src\Helper;
+
 class Imsc_Template_Loader {
     /**
      * Path to template's folder.
@@ -23,23 +25,11 @@ class Imsc_Template_Loader {
 	 */
 	public static function init() {
         self::$templates_dir = IMSC_ABSPATH . 'templates';
-        self::$templates = self::templates_helper_data();
+        self::$templates = Helper::templates_helper_data();
 
         add_filter( 'template_include', array( __CLASS__, 'template_loader' ) );
         add_filter( 'theme_page_templates', array( __CLASS__, 'page_templates' ) );
         add_filter( 'display_post_states', array( __CLASS__, 'post_states' ), 10, 2 );
-    }
-
-    /**
-     * Helper array with templates files names.
-     */
-    private static function templates_helper_data() {
-        $templates = [
-            'shop.php' => 'Магазин',
-            'cart.php' => 'Корзина',
-        ];
-
-        return $templates;
     }
 
     /**

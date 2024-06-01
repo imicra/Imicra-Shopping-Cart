@@ -128,40 +128,6 @@ class Imsc_Post_Types {
             'rewrite'             => false,
             'query_var'           => false,
         ) );
-
-        register_post_type( 'imsc_customers', array(
-            'labels'              => array(
-                'name'               => __( 'Покупатели', 'imsc' ),
-                'singular_name'      => __( 'Покупатель', 'imsc' ),
-                'menu_name'          => __( 'Покупатели', 'imsc' ),
-                'name_admin_bar'     => __( 'Покупатели', 'imsc' ),
-                'add_new'            => __( 'Добавить Покупатель', 'imsc' ),
-                'add_new_item'       => __( 'Добавить Новый Покупатель', 'imsc' ),
-                'new_item'           => __( 'Новый Покупатель', 'imsc' ),
-                'edit_item'          => __( 'Редактировать Покупатели', 'imsc' ),
-                'view_item'          => __( 'Смотреть Покупатели', 'imsc' ),
-                'all_items'          => __( 'Все Покупатели', 'imsc' ),
-                'search_items'       => __( 'Искать Покупатели', 'imsc' ),
-                'parent_item_colon'  => __( 'Родительский Покупатель', 'imsc' ),
-                'not_found'          => __( 'Не найдено Покупателей', 'imsc' ),
-                'not_found_in_trash' => __( 'Не найдено Покупателей в корзине.', 'imsc' ),
-            ),
-            'public'              => false,
-            'publicly_queryable'  => false,
-            'exclude_from_search' => true,
-            'show_ui'             => true,
-            'show_in_menu'        => true,
-            'show_in_nav_menus'   => false,
-            'menu_position'       => 32,
-            'menu_icon'           => 'dashicons-groups',
-            'capability_type'     => 'post',
-            // 'map_meta_cap'        => true,
-            'hierarchical'        => false,
-            'supports'            => array( 'title' ),
-            'has_archive'         => false,
-            'rewrite'             => false,
-            'query_var'           => false,
-        ) );
 	}
 
 }

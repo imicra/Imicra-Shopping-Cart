@@ -42,9 +42,17 @@ class Imsc_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
-		// add_action( 'current_screen', array( $this, 'conditional_includes' ) );
+        $this->includes();
 
+		// add_action( 'current_screen', array( $this, 'conditional_includes' ) );
 	}
+
+    /**
+	 * Include any classes we need within admin.
+	 */
+    public function includes() {
+        include_once __DIR__ . '/class-admin-meta-boxes.php';
+    }
 
 	/**
 	 * Register the stylesheets for the admin area.

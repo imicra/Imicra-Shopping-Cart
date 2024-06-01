@@ -54,6 +54,8 @@ register_deactivation_hook( __FILE__, 'deactivate_imsc' );
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-imsc.php';
 
+require 'vendor/autoload.php';
+
 /**
  * Begins execution of the plugin.
  *

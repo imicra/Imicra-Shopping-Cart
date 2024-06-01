@@ -86,6 +86,11 @@ class Imsc {
 	 * @access   private
 	 */
 	private function load_dependencies() {
+        // $loader = IMSC_ABSPATH . 'vendor/autoload.php';
+
+        // if ( ! $loader ) {
+        //     throw new Exception( 'vendor/autoload.php missing please run `composer install`' );
+        // }
 
 		/**
 		 * The class responsible for orchestrating the actions and filters of the

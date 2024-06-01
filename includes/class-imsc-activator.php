@@ -39,8 +39,6 @@ class Imsc_Activator {
 	}
 
     public static function create_tables() {
-        global $wpdb;
-
         require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 
         dbDelta( self::get_schema() );
@@ -56,22 +54,11 @@ class Imsc_Activator {
 		}
 
         $tables = "
-        CREATE TABLE {$wpdb->prefix}imsc_customers (
-            id bigint(20) unsigned NOT NULL auto_increment,
-            name varchar(255) NOT NULL,
-            email varchar(100) NULL default NULL,
-            address text NOT NULL,
-            city varchar(100) NOT NULL,
-            zip varchar(20) DEFAULT '' NOT NULL,
-            country varchar(100) DEFAULT '' NOT NULL,
-            PRIMARY KEY (id)
-        ) $collate;
         CREATE TABLE {$wpdb->prefix}imsc_products (
-            id bigint(20) unsigned NOT NULL auto_increment,
             product_id bigint(20) unsigned NOT NULL,
+            sku varchar(20) NULL default '',
             price decimal(7,2) NULL DEFAULT NULL,
-            PRIMARY KEY (id),
-            KEY product_id (product_id)
+            PRIMARY KEY (product_id)
         ) $collate;
         CREATE TABLE {$wpdb->prefix}imsc_orders (
             id bigint(20) unsigned NOT NULL auto_increment,
